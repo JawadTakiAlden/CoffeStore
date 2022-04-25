@@ -381,7 +381,7 @@ header .btn {
 }
 
 .home {
-  background-image: url("../../imgs/home-img.jpeg");
+  background-image: url("../imgs/home-img.jpeg");
   background-size: cover;
 }
 
