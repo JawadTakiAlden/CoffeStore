@@ -1,0 +1,45 @@
+@include Reset;
+@include ContainerMaker;
+@include ContainerMakerResponsev;
+body{
+    background-color: $bg;
+}
+.btn{
+    display: inline-block;
+    width: fit-content;
+    padding: 10px 20px;
+    background-color: $mainColor;
+    font-size: 17px;
+    color: white;
+    text-transform: capitalize;
+    transition: $mainTranstion;
+    &:hover{
+        letter-spacing: 2px;
+    }
+}
+.main-heading{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 30px;
+    h3{
+        color: $white;
+        span{
+            color: $mainColor;
+        }
+    }
+}
+
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-track{
+    background-color: $black;
+}
+::-webkit-scrollbar-thumb{
+    background-color: $white;
+    border-radius: 6px;
+}
+html{
+    scroll-behavior: smooth;
+}

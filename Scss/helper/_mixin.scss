@@ -1,0 +1,180 @@
+// overlay mixin
+@mixin  overlay($colorOverlay,$alpha) {
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba($colorOverlay,$alpha);
+        z-index: 1;
+    }
+}
+// prefixer mixin
+@mixin prefixer($proparty , $value , $prefixes:()) {
+    @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $proparty} : #{$value}
+    }
+    #{$proparty} : $value;
+}
+// anmation mixin
+@mixin keyFrame($anemation-name) {
+    @-webkit-keyframes #{$anemation-name}{
+        @content;
+    }
+    @-moz-keyframes #{$anemation-name}{
+        @content;
+    }
+    @keyframes #{$anemation-name}{
+        @content;
+    }
+}
+// centering by margin
+@mixin CenteringBM{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+// centering by flex
+@mixin CenteringHBF{
+    justify-content: center;
+}
+@mixin CenteringVBF{
+    align-items: center;
+}
+@mixin CenteringVHBF{
+    justify-content: center;
+    align-items: center;
+}
+// centering by transform
+@mixin CenteringBT {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+// centering by postion
+@mixin CenteringHBP {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@mixin CenteringVBP {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@mixin CenteringHVBP {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+// container maker
+@mixin ContainerMaker{
+    .container{
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+// container maker Responsiv
+@mixin ContainerMakerResponsev{
+    .container{
+        @media($ExtraSmall){
+            max-width: 100%;
+        }
+    }
+    .container{
+        @media($Samll){
+            max-width: 540px;
+        }
+    }
+    .container{
+        @media($Medium){
+            max-width: 720px;
+        }
+    }
+    .container{
+        @media($Large){
+            max-width: 960px;
+        }
+    }
+    .container{
+        @media($XLarg){
+            max-width: 1140px;
+        }
+    }
+    .container{
+        @media($XXLarg){
+            max-width: 1320px;
+        }
+    }
+}
+
+// reset all rule
+@mixin Reset {
+    *{
+        @include prefixer(padding,0 ,webkit moz o);
+        @include prefixer(box-sizing,border-box , webkit moz o);
+        @include prefixer(margin,0 , webkit moz o);
+    }
+    ul{
+        @include prefixer(list-style, none,webkit moz o );
+    }
+    a{
+        @include prefixer(text-decoration,none ,webkit moz o );
+        
+    }
+}
+// display flex
+@mixin FlexWithSpaceBetwen{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin FlexWithSpaceEvenly{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+@mixin FlexWithSpaceAround{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@mixin  Dflex {
+    display: flex;
+}
+// cercle maker
+@mixin cercile ($width){
+    width: $width;
+    height: $width;
+    border-radius: 50%;
+}
+// padding maker
+@mixin paddingMaker($top , $bottom) {
+    padding-top: #{$top+'px'};
+    padding-bottom: #{$bottom+'px'};
+}
+@mixin price {
+    .price{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 25px;
+        span{
+            text-decoration: line-through;
+            font-size: 18px;
+        }
+    }
+}
+@mixin stars {
+    .stars{
+        margin-top: 20px;
+        i{
+            color: $mainColor;
+            font-size: 18px;
+        }
+    }
+}

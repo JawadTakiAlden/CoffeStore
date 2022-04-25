@@ -1,0 +1,37 @@
+.home{
+    background-image: url("../../imgs/home-img.jpeg");
+    background-size: cover;
+    .container{
+        height: calc(100vh - 84px);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        .text{
+            flex-basis: 60%;
+            color: white;
+
+            @media(max-width:767px){
+                &{
+                    justify-content: center;
+                    flex-basis: 100%;
+                    text-align: center;
+                }
+            }
+            h2{
+                font-size: 50px;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                @media(max-width:767px){
+                    &{
+                        font-size: 30px;
+                    }
+                }
+            }
+            p{
+                margin-bottom: 20px;
+                font-size: 18px;
+                line-height: 1.6;
+            }
+        }
+    }
+}

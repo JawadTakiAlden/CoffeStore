@@ -1,0 +1,44 @@
+.review{
+    padding-top: $mainPaddingTop;
+    padding-bottom: $mainPaddingBottom;
+    .container{
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+        @media(max-width:767px){
+            &{
+                flex-direction: column;
+            }
+        }
+        .box{
+            text-align: center;
+            padding: 15px;
+            border: $border;
+            transition: $mainTranstionAnm;
+            transform: scale(0);
+            opacity: 0;
+            p{
+                color: $gray;
+                line-height: 1.5;
+                margin-top: 15px;
+                margin-bottom: 20px;
+            }
+            .person{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+            h4{
+                color: $white;
+                text-transform: capitalize;
+                margin-top: 10px;
+                font-size: 20px;
+            }
+            @include stars;
+            .stars{
+                margin-top: 10px;
+            }
+        }
+    }
+}

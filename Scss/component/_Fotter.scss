@@ -1,0 +1,62 @@
+.footer{
+    background-color: $black;
+    padding-top: $mainPaddingTop;
+    padding-bottom: $mainPaddingBottom;
+    .container{
+        .icon{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            i{
+                padding: 5px;
+                @include cercile(50px);
+                border: $border;
+                color: $white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+                transition: $mainTranstion;
+                &:hover{
+                    background-color: $mainColor;
+                }
+            }
+        }
+        .link{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            a{
+                display: inline-block;
+                padding: 10px;
+                border: $border;
+                color: $white;
+                text-transform: capitalize;
+                font-size: 22px;
+                transition: $mainTranstion;
+                &:hover{
+                    background-color: $mainColor;
+                }
+            }
+        }
+        .have{
+            text-transform: capitalize;
+            color: $white;
+            text-align: center;
+            font-size: 20px;
+            &:hover{
+                span{
+                    font-size: 22px;
+                }
+            }
+            span{
+                color: $mainColor;
+                transition: $mainTranstion;
+            }
+        }
+    }
+}
